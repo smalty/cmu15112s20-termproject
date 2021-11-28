@@ -1,0 +1,86 @@
+************************************************
+Project Description
+************************************************
+The title of the game is subject to change, but it is currently "Super Ninja 3D World". It is a 3D game made using the module Panda3D 
+similarto the game "Super Mario 3D World". Players are on a 3d terrain with enemies, coins, and power-ups. The player can control the ninja
+character using WASD, jump using space, and shoot out a dagger by aiming with the mouse and shooting with the left mouse button. After 
+reaching a certain area, a boss fight will trigger. The game ends if the player's health becomes 0 or the boss's health becomes 0. The
+game score is then calculated from number of enemies killed, remaining health left, and coins gathered.
+
+************************************************
+Competitive Analysis
+************************************************
+There are almost no games that I have seen that are similar to my idea, but there is a "Super Mario Game" from 15-112 Fall 2020 and 
+"SuperDog" from 15-112 Spring 2018 that features a 2D version of Mario. Therefore I will be stating how my project is different in general.
+I will be using Panda3D to program my game, which implements 3D features. "The Coaster Generator" from Spring 2018 uses Panda3D, but it 
+replicates a different game that is in a first person point of view that features moving around in a roller coaster. I will have a third
+person POV game that is similar to Mario. 
+
+************************************************
+Structural Plan
+************************************************
+There are 2 python files that are essential to run the game. One of them is the main file currently named "term_project". This contains 
+the base of the game which includes the starting menu, the environment, and camera. The other file is called within the first and contains
+the classes of the elements in the game. Currently there is only the player, enemy, and walking enemy class/superclass, but it will contain
+coins, powerups, and the final boss. There will also be .egg files made with blender to use for the models of the various elements.
+
+************************************************
+Algorithmic Plan
+************************************************
+The most complicated part of the project is detecting collision in Panda3D. It is very difficult to handle collisions because it is unclear
+as to where the collisions are being stored and how to store the event of collisions. I will studying on the Panda3D main website on how to
+implement collision and handlers (things that trigger events when an event happens). Without the use of collisions, I will not be able to
+do most of my project. The game has to detect when a collision happens, and what is colliding with what. If a knife the player shoots out 
+collides with an enemy, it takes damage. If an enemy collides with the player, the player takes damage. If the player collides with certain 
+power-ups or coins, the score will be increased or the player will have special powers. Another complicated part is making the models of 
+the various elements using blender. If I cannot make models, I will have to use free models online.
+
+************************************************
+Timeline Plan
+************************************************
+4/17 - Implement collision between player/enemy so player loses health
+4/18 - Map attack under player class to mouse
+4/19 - Create power-up and coin superclasses
+4/20 - Implement collision between player and power-up/coin and update player based on power-up/coin
+4/21 - Create Final Boss class
+4/22 - Create Game Over Screen
+4/23 - Create models
+4/24 - Create Models
+4/25 - Create Models
+4/26 - In case things do not go as planned, extra time
+4/27 - In case things do not go as planned, extra time
+4/28 - In case things do not go as planned, extra time
+
+************************************************
+Version Control Plan
+************************************************
+I am backing up my code using Google Drive and uploading all the files into a folder. There is an image shared with the zip file named 
+"Version Control Plan" that shows the files in the folder.
+
+************************************************
+Module List
+************************************************
+Panda3D and all features that come with it
+
+************************************************
+TP2 Update
+************************************************
+I applied collisions so that if the enemy hits the player, the player loses health. Once the player loses all health, a game over screen 
+is shown with options to retry or quit. With the left mouse button, players can now shoot out a projectile that damages the enemy. This 
+projectile cannot be spammed, and it disappears when it hits an enemy or it goes out a certain range. I decided to make the point of view
+top down because the aiming of the projectile is skewed when looking at the player from a different angle. When the player defeats all 
+the enemies (as of now only 2 enemies), a level complete screen will appear. I have also applied a health indicator that shows how much
+health the player has on the top left corner. I plan on making 1 or 2 power-ups, a scoring system, and the boss. 
+
+************************************************
+TP3 Update
+************************************************
+I have made 2 power-ups. One powerup allows the player to shoot three knives in separate directions with one click, and the other doubles
+the damage of the knife. The powerups are dropped randomly (50% each) if the enemy is killed. In the positive y-direction (up), I have set
+a final boss with its own "AI". The boss has 3 moves that it randomly chooses from. The boss's total health is 30, and when it's health is 
+between 20-30, it's three moves are a single shot fireball, a spread wave of fireballs, and a large fireball that it charges up. When the 
+boss's health is between 10-20, the moves are the same except the fireballs are faster. At the last stage when the boss's health is betweeen
+1-10, the boss either shoots out three fireballs at once, shoots out a wave of firballs with double the amount of the first and second stages,
+and shoots out a large fireball with no delay. I have also included the scoring system that one can see in the top right corner, and once the
+game is over or the level is complete, your score will be given back. I have also decided to rename my project to Super Panda 3D World
+since I was not able to apply new models to the enemies nor the player.
